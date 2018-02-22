@@ -1,0 +1,17 @@
+<ion-menu [content]="content" type="overlay" color="avec">
+  <ion-header>
+  </ion-header>
+
+  <ion-content color="avec">
+    <ion-list color="avec">
+      <img src="../assets/imgs/avec-logo.png" class="logo-avec">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="avec">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
