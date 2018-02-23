@@ -9,6 +9,9 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SobrePageModule } from '../pages/sobre/sobre.module';
+import { HttpModule } from "@angular/http"
+import { HttpClientModule } from '@angular/common/http';
+import { FotosProvider } from '../providers/fotos/fotos';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { SobrePageModule } from '../pages/sobre/sobre.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SobrePageModule,
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +35,8 @@ import { SobrePageModule } from '../pages/sobre/sobre.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FotosProvider
   ]
 })
 export class AppModule {}

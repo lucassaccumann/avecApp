@@ -3,11 +3,14 @@
   </ion-header>
 
   <ion-content color="avec">
-    <ion-list color="avec">
+    <ion-list>
       <img src="../assets/imgs/avec-logo.png" class="logo-avec">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="avec">
         {{p.title}}
       </button>
+      <button menuClose ion-item *ngFor="let ep of ePages" (click)="openExternalPage(ep)" color="avec">
+          {{ep.title}}
+        </button>
     </ion-list>
   </ion-content>
 

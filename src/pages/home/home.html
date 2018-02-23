@@ -7,14 +7,20 @@
     </ion-navbar>
   </ion-header>
 
-<ion-content padding>
-  <h3>Eae</h3>
-
-  <img src="{{'http://static.salaovip.com.br/saloes/vip/galeria/originais/' + id_foto }}">  
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <ion-slides pager="true" class="slides">
+  <div *ngFor="let idFoto of list_fotos" >
+    <ion-slide>
+      <img src="{{'http://static.salaovip.com.br/saloes/vip/galeria/originais/' + idFoto.foto }}">
+    </ion-slide>
+  </div>
+  </ion-slides>
+  <div class="text-div">
+    <img src="../../assets/imgs/texto.png">
+  </div>
+  <div class="redes-div">
+    <a href="https://www.facebook.com/AvecBrasil/"><img class="icon-social" src="../../assets/imgs/facebook.png"></a>
+    <a href="https://www.linkedin.com/company/3271088/"><img class="icon-social" src="../../assets/imgs/linkedin.png"></a>
+    <a href="https://www.instagram.com/avecbrasil/"><img class="icon-social" src="../../assets/imgs/instagram.png"></a>
+  </div>
 </ion-content>

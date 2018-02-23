@@ -4,4 +4,38 @@ page-home {
         background-color: #7900ab;
     }
     
+    ion-slides.slides.slides-ios.slides {
+        width: auto;
+        height: auto;
+    }
+
+    .swiper-pagination-bullet{
+        width: 12px;    
+        height: 12px;
+    }
+
+    .text-div {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 2%;
+    }
+
+    .icon-social {
+        width: 40px;
+        height: 40px;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .redes-div {
+        margin: auto;
+        width: 70%;
+        height: 15%;
+    }
+
+    .toolbar-title.toolbar-title-ios {
+        font-weight: 400;
+    }
+
 }

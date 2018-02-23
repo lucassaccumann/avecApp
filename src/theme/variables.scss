@@ -87,3 +87,7 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+.toolbar-title.toolbar-title-ios {
+  font-weight: 400;
+}
