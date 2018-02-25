@@ -1,28 +1,49 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Platform } from 'ionic-angular';
 import { FotosProvider } from '../../providers/fotos/fotos';
+import { AppAvailability } from '@ionic-native/app-availability';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
   providers: [
-    FotosProvider
+    FotosProvider,
+    AppAvailability,
   ]
 })
 export class HomePage {
-  id_foto = "vip-20171220163516.jpg";
+  idFb_avec = "376876849028749";
   public list_fotos = new Array<string>();
-  i = 0;
+  fb: string;
+  hasFb: boolean;
+  
   constructor(
     public navCtrl: NavController,
-    private fotosProvider: FotosProvider
+    private fotosProvider: FotosProvider,
+    public appAvailability: AppAvailability,
+    public platform: Platform
   
-  ) {
+  ){
+    if(this.platform.is('ios')){
+			this.fb = 'fb://';
+		}
+		else if(this.platform.is('android')){
+			this.fb = 'com.facebook.katana';
+		}
+		this.appAvailability.check(this.fb).then((isInstalled) => {
+			if(isInstalled) this.hasFb = true;
+			else this.hasFb = false;
+		});
 
   }
 
-  public funcaozinha(num1:number): void{
-    alert("Funcionaaa" + num1);
+  public openApp(): void{
+    if(this.hasFb){
+      window.open('fb://page/'+this.idFb_avec, '_system', 'location=no');
+    }
+    else{
+      window.location.replace("http://facebook.com/AvecBrasil");
+    }
   }
 
   ionViewDidLoad() {
@@ -30,10 +51,6 @@ export class HomePage {
       data=>{
         const response = (data as any);
         const objeto = (response.data.gallery);
-        // this.list_fotos = objeto.results;
-        /* for(let i in objeto){
-          this.list_fotos[i] = i;
-        }*/ 
         for(var i = 0;i<objeto.length;i++){
           this.list_fotos[i] = objeto[i];
         }

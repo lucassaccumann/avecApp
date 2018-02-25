@@ -1,12 +1,8 @@
 page-home {
 
-    #header-avec {
-        background-color: #7900ab;
-    }
-    
-    ion-slides.slides.slides-ios.slides {
-        width: auto;
-        height: auto;
+    ion-slides {
+        width:auto;
+        height: 40%;
     }
 
     .swiper-pagination-bullet{
@@ -32,10 +28,10 @@ page-home {
         margin: auto;
         width: 70%;
         height: 15%;
-    }
+    }    
 
-    .toolbar-title.toolbar-title-ios {
-        font-weight: 400;
-    }
+    .swiper-pagination-bullet {
+        background: #7900ab;
+      }
 
 }

@@ -10,17 +10,22 @@
 <ion-content>
   <ion-slides pager="true" class="slides">
   <div *ngFor="let idFoto of list_fotos" >
+    <th>
     <ion-slide>
       <img src="{{'http://static.salaovip.com.br/saloes/vip/galeria/originais/' + idFoto.foto }}">
     </ion-slide>
+    </th>
   </div>
   </ion-slides>
+  
   <div class="text-div">
-    <img src="../../assets/imgs/texto.png">
+    <img src="assets/imgs/texto.png">
   </div>
   <div class="redes-div">
-    <a href="https://www.facebook.com/AvecBrasil/"><img class="icon-social" src="../../assets/imgs/facebook.png"></a>
-    <a href="https://www.linkedin.com/company/3271088/"><img class="icon-social" src="../../assets/imgs/linkedin.png"></a>
-    <a href="https://www.instagram.com/avecbrasil/"><img class="icon-social" src="../../assets/imgs/instagram.png"></a>
+    <!-- <a href="https://www.facebook.com/AvecBrasil/"> -->
+      <img (click)="openApp()" class="icon-social" src="assets/imgs/facebook.png">
+    <!-- </a> -->
+    <a href="https://www.linkedin.com/company/3271088/"><img class="icon-social" src="assets/imgs/linkedin.png"></a>
+    <a href="https://www.instagram.com/avecbrasil/"><img class="icon-social" src="assets/imgs/instagram.png"></a>
   </div>
 </ion-content>
