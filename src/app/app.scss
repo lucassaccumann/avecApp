@@ -20,11 +20,15 @@
     margin-bottom: -2%;
 }
 
-ion-list.list.list-ios {
+ion-list.list {
     background-color: #7900ab;
     height: 100%;
 }
 
 .item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner{
     background-image:none;
+}
+
+.content-menu{
+    overflow-y: hidden;
 }
